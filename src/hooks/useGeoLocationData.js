@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const overpassApiUrl = `https://overpass-api.de/api/interpreter`;
 
-export const useGeoLocationData = (lat, lon, radius) => {
+const useGeoLocationData = (lat, lon, radius) => {
     const [locations, setLocations] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -37,5 +37,7 @@ export const useGeoLocationData = (lat, lon, radius) => {
         getData(lat, lon, radius);
     }, [lat, lon, radius])
 
-    return [locations, loading, error];
+    return {locations, loading, error};
 }
+
+export default useGeoLocationData;
