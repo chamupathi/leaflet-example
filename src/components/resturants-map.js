@@ -23,7 +23,7 @@ const ResturantsMap = () => {
 
     return <div style={{ width: '100%', height: '80vh' }}>
         <MapContainer center={center}
-            zoom={13}
+            zoom={15}
             scrollWheelZoom={false}
             style={{ width: '100%', height: '100%' }}
         >
@@ -31,6 +31,11 @@ const ResturantsMap = () => {
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
+            {locations.map(l => <Marker id={l.id} position={[l.lat, l.lon]}>
+                <Popup>
+                    {l.tags.name}
+                </Popup>
+            </Marker>)}
             <Marker position={center}>
                 <Popup>
                     Comply cube HQ
