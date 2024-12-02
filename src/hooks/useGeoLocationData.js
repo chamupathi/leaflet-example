@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 const overpassApiUrl = `https://overpass-api.de/api/interpreter`;
 
-
 export const useGeoLocationData = (lat, lon, radius) => {
     const [locations, setLocations] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -12,7 +11,9 @@ export const useGeoLocationData = (lat, lon, radius) => {
 
         setLoading(true);
         setError(null);
+
         const query = `${overpassApiUrl}?data=[out:json];node(around:${radius},${lat},${lon})[amenity=restaurant];out;`
+        
         try {
             const response = await fetch(query);
 
