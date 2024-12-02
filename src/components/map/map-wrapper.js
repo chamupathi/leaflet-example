@@ -8,13 +8,12 @@ const MapWrapper = ({
     zoom = 15,
     scrollWheelZoom = false,
     styles = defaultStyles
-}) => {
-
-    return <MapContainer center={center}
-        zoom={zoom}
-        scrollWheelZoom={scrollWheelZoom}
-        style={styles}
-    >
+}) => <MapContainer
+            center={center}
+            zoom={zoom}
+            scrollWheelZoom={scrollWheelZoom}
+            style={styles}
+        >
         <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -25,5 +24,5 @@ const MapWrapper = ({
             </Popup>
         </Marker>)}
     </MapContainer>
-}
+
 export default MapWrapper;

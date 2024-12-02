@@ -1,20 +1,17 @@
 import { useGeoLocationData } from "../hooks/useGeoLocationData";
 import ErrorText from "./text/error-text";
 import LoadingText from "./text/loading-text";
-import MapWrapper from "./map-wrapper";
+import MapWrapper from "./map/map-wrapper";
 
-const center = [
-    // Comply cube HQ lat, lon
-    51.5039555, -0.0175315
-]
+import './resturants-map.css'
 
-const SEARCH_RADIUS = 1000; // 1km
 
-const ResturantsMap = () => {
 
-    const [locations, loading, error] = useGeoLocationData(center[0], center[1], SEARCH_RADIUS);
+const ResturantsMap = ({center, radius}) => {
 
-    return <div style={{ width: '100%', height: '80vh' }}>
+    const [locations, loading, error] = useGeoLocationData(center[0], center[1], radius);
+
+    return <div className="resturants-map">
         <MapWrapper locations={locations} center={center} />
         {error && <ErrorText />}
         {loading && <LoadingText />}
