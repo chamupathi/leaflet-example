@@ -1,13 +1,15 @@
 # Leaflet maps with geolocation API
 
-Initialize a map with LeafletJS centered on ComplyCube's HQ.
-Use a geolocation API to retrieve nearby food places within a specified radius (1 km).
+Initialize a map with LeafletJS centered on a given center.
+Use a geolocation API to retrieve nearby food places within a specified radius.
 Display restaurants on the map
 
 ## Libraries
-[react-leaflet] https://www.npmjs.com/package/react-leaflet
-[leaflet] https://www.npmjs.com/package/leaflet
-[overpass API] https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_API_by_Example
+[react-leaflet](https://www.npmjs.com/package/react-leaflet)
+
+[leaflet](https://www.npmjs.com/package/leaflet)
+
+[overpass API](https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_API_by_Example)
 
 ## Available Scripts
 
