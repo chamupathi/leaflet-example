@@ -1,12 +1,13 @@
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import config from '../../config.json'
 
 const defaultStyles = { width: '100%', height: '100%' }
-const DEFAULTS_ZOOM = 15
+const DEFAULT_ZOOM = config.default_zoom;
 
 const MapWrapper = ({
     locations,
     center,
-    zoom = DEFAULTS_ZOOM,
+    zoom = DEFAULT_ZOOM,
     scrollWheelZoom = false,
     styles = defaultStyles
 }) => <MapContainer

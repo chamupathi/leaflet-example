@@ -5,8 +5,6 @@ import MapWrapper from "./map/map-wrapper";
 
 import './resturants-map.css'
 
-
-
 const ResturantsMap = ({center, radius}) => {
 
     const {locations, loading, error} = useGeoLocationData(center[0], center[1], radius);

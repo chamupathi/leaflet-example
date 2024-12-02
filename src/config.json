@@ -1,3 +1,4 @@
 {
-    "overpassApiUrl" : "https://overpass-api.de/api/interpreter"
+    "overpassApiUrl" : "https://overpass-api.de/api/interpreter",
+    "default_zoom" : 15
 }
