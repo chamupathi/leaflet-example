@@ -10,7 +10,8 @@ export const useGeoLocationData = (lat, lon, radius) => {
 
     const getData = async (lat, lon, radius) => {
 
-        setLoading(true)
+        setLoading(true);
+        setError(null);
         const query = `${overpassApiUrl}?data=[out:json];node(around:${radius},${lat},${lon})[amenity=restaurant];out;`
         try {
             const response = await fetch(query);
@@ -24,18 +25,15 @@ export const useGeoLocationData = (lat, lon, radius) => {
             setLocations(data.elements)
         } catch (error) {
             console.error("Error fetching data from OpenStreetMap:", error);
-            return null;
+            setError(error);
         } finally {
-            setLoading(false)
+            setLoading(false);
         }
     }
 
 
     useEffect(() => {
-
-
         getData(lat, lon, radius);
-
     }, [lat, lon, radius])
 
     return [locations, loading, error];
