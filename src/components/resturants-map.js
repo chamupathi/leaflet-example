@@ -36,11 +36,6 @@ const ResturantsMap = () => {
                     {l.tags.name}
                 </Popup>
             </Marker>)}
-            <Marker position={center}>
-                <Popup>
-                    Comply cube HQ
-                </Popup>
-            </Marker>
         </MapContainer>
 
     </div>
