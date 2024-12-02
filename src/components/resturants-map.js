@@ -19,7 +19,7 @@ const center = [
 
 const ResturantsMap = () => {
 
-    const locations = useGeoLocationData(center[0], center[1], 1000);
+    const [locations] = useGeoLocationData(center[0], center[1], 1000);
 
     return <div style={{ width: '100%', height: '80vh' }}>
         <MapContainer center={center}
